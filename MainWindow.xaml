@@ -1,0 +1,34 @@
+﻿<Window x:Class="WpfApp2.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp2" xmlns:col="clr-namespace:System.Collections;assembly=mscorlib"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Label HorizontalAlignment="Center">
+            <TextBlock Text="Салон красоты" FontSize="14" ></TextBlock>
+        </Label>
+        <DataGrid x:Name="dg"  ItemsSource="{Binding Product}" Margin="0,57,0,0" AutoGenerateColumns="False" >
+        <DataGrid.Columns >
+                <DataGridTemplateColumn>
+                    <DataGridTemplateColumn.CellTemplate >
+                        <DataTemplate>
+                            <Button Content="Кнопка" Click="Button_Click">
+                                
+                            </Button>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTextColumn Header="ID" Binding="{Binding ID}"></DataGridTextColumn>
+                <DataGridTextColumn Header="ID" Binding="{Binding Title}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Cost" Binding="{Binding Cost}"></DataGridTextColumn>
+                          
+        </DataGrid.Columns>
+            
+       
+    </DataGrid>
+        <Button Content="Корзина" Click="Button_Click_1" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="20"></Button>
+    </Grid>
+</Window>
